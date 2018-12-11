@@ -4,7 +4,7 @@
 
 If you want a quickstart, you can start with one of two demo apps:
 
-- [Angular Demo App](https://github.com/alexziskind1/nativescript-oauth2/tree/master/demo-angular)
+- [Angular Demo App](https://bitbucket.org/CodeParticle/nativescript-linkedin-oauth2/src/master/demo-angular)
 
 ### Bootstrapping
 

@@ -27,8 +27,8 @@
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/alexziskind1/nativescript-oauth2.git"
+    "type": "bb",
+    "url": "https://bitbucket.org/CodeParticle/nativescript-linkedin-oauth2"
   },
   "keywords": [
     "NativeScript",
