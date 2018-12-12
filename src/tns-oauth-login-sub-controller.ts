@@ -37,8 +37,8 @@ export class TnsOAuthLoginSubController {
     const authCode = authorizationCodeFromRedirectUrl(url);
 
     this.completion && this.completion(authCode, null);
-    completion && completion(authCode, null);
     this.completion = null;
+    completion && completion(authCode, null);
 
     return true;
   }
