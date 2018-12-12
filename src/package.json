@@ -1,6 +1,6 @@
 {
   "name": "nativescript-linkedin-oauth2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "OAuth 2 linkedin login for NativeScript.",
   "main": "oauth",
   "typings": "index.d.ts",
