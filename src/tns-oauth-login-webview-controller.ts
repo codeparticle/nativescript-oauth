@@ -3,6 +3,9 @@ import { WebView, LoadEventData } from 'tns-core-modules/ui/web-view';
 import { Page } from 'tns-core-modules/ui/page';
 import { GridLayout } from 'tns-core-modules/ui/layouts/grid-layout';
 import { NavigationButton } from 'tns-core-modules/ui/action-bar/action-bar';
+import { isAndroid } from 'tns-core-modules/platform';
+import * as application from 'tns-core-modules/application';
+
 import {
   TnsOAuthClient,
   TnsOAuthClientLoginBlock,
@@ -57,11 +60,18 @@ export class TnsOAuthLoginWebViewController
     const navBtn = new NavigationButton();
     navBtn.text = 'Done';
     page.actionBar.navigationButton = navBtn;
-    page.addEventListener('navigatingFrom', () => {
-      this.loginController.completion && this.loginController.completion(null, null);
-    });
+    page.addEventListener('navigatingFrom', this.onNavigateBack, this);
+
+    if (isAndroid) {
+      application.android.removeEventListener(application.AndroidApplication.activityBackPressedEvent, this.onNavigateBack, this);
+      application.android.addEventListener(application.AndroidApplication.activityBackPressedEvent, this.onNavigateBack, this);
+    }
 
     return page;
+  }
+
+  private onNavigateBack() {
+    this.loginController.completion && this.loginController.completion(null, null);
   }
 
   private createWebView(
