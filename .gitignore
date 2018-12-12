@@ -4,6 +4,7 @@
 *.esm.json
 *(!webpack.config).js
 *.js.map
+src/*.js
 *.log
 src/*.d.ts
 !src/index.d.ts
